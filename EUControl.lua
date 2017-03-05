@@ -19,19 +19,14 @@ function mfsuBatTable(ID, x, y)
   n.mfsuID4 = ID * 100 + 4
   n.xPos =  x
   n.yPos =  y
-  n.mfsuStatPID1 = 4
-  n.mfsuStatPID2 = 4
-  n.mfsuStatPID3 = 4
-  n.mfsuStatPID4 = 4
-  n.mfsuStatCID1 = 4
-  n.mfsuStatCID2 = 4
-  n.mfsuStatCID3 = 4
-  n.mfsuStatCID4 = 4
-  n.mfsuAddID1 = ""
-  n.mfsuAddID2 = ""
-  n.mfsuAddID3 = ""
-  n.mfsuAddID4 = ""
-  n.redsAddID1 = ""
+  n.mfsuStatPID1 = 0
+  n.mfsuStatPID2 = 0
+  n.mfsuStatPID3 = 0
+  n.mfsuStatPID4 = 0
+  n.mfsuStatCID1 = 0
+  n.mfsuStatCID2 = 0
+  n.mfsuStatCID3 = 0
+  n.mfsuStatCID4 = 0
   return n  
 end    
  
@@ -85,15 +80,10 @@ function genBatAdd()
 
   mfsuBat3.mfsuAddID1 = component.get("ff0c") -- mfsu 1.1
   mfsuBat3.mfsuAddID2 = component.get("a814") -- mfsu 1.2
-  mfsuBat3.mfsuAddID3 = component.get("c9af") -- mfsu 1.3
+  mfsuBat3.mfsuAddID3 = component.get("c9a8") -- mfsu 1.3
   mfsuBat3.mfsuAddID4 = component.get("4a56") -- mfsu 1.4
   mfsuBat3.redsAddID1 = component.get("f3aa") -- redstone IO
-
-
 end
- 
- 
- 
  
 function getSignalInput(ID)
   if ID == 1 then
@@ -111,8 +101,31 @@ function getSignalInput(ID)
   dwg.text(m.xPos+52, m.yPos+4, "black", "white", e2)
   dwg.text(m.xPos+52, m.yPos+6, "black", "white", e3)
   dwg.text(m.xPos+52, m.yPos+8, "black", "white", e4)
+  m.mfsuStatPID1 = e1
+  m.mfsuStatPID2 = e2
+  m.mfsuStatPID3 = e3
+  m.mfsuStatPID4 = e4
 end
- 
+
+--[[
+function updateMfsu(ID)
+  if ID == 1 then
+    m = mfsuBat1
+  elseif ID == 2 then
+    m = mfsuBat2
+  elseif ID == 3 then
+    m = mfsuBat3
+  end
+
+  e1 = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), 2)
+  e2 = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), 2)
+  e3 = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), 2)
+  e4 = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), 2)
+
+  e1diff = e1 - m.mfsuStatPID1
+ if m.
+--]] 
+
 function debug(ID)  
   m = mfsuBat1
   print("MFSU ID-"..(m.batID).." // ".. "Energy: ".. component.proxy(m.mfsuAddID2).getEnergy())
