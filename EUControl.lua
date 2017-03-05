@@ -23,10 +23,6 @@ function mfsuBatTable(ID, x, y)
   n.mfsuEnergyID2 = 0
   n.mfsuEnergyID3 = 0
   n.mfsuEnergyID4 = 0
---  n.mfsuStatCID1 = 0
---  n.mfsuStatCID2 = 0
---  n.mfsuStatCID3 = 0
---  n.mfsuStatCID4 = 0
   return n  
 end    
  
@@ -154,14 +150,4 @@ while true do
   os.sleep(1)
 --  debug(1)
 end
- 
- 
- 
- 
---[[
-for k,v in pairs(mfsuBat1) do print("mfsuBat1." .. k .. " ::: " .. v) end
-print("=========")
-for k,v in pairs(mfsuBat2) do print("mfsuBat2." .. k .. " ::: " .. v) end
-print("=========")
-for k,v in pairs(mfsuBat3) do print("mfsuBat3." .. k .. " ::: " .. v) end
---]]
+  
