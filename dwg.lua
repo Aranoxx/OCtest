@@ -65,23 +65,3 @@ end
 dwg.debug1 = function(x, y)
   gpu.set(1, 50, ("Debug -- Coords = x: " .. x .. " y: " .. y .. " "))
 end
- 
---[[
- 
- 
--- ============================================= TEST AREA
- 
---]]
- 
- 
- 
- 
---[[
-dwg.cls()
-dwg.setCol("black", "white")
-dwg.frame(10, 10, 100, 20, "blue")
-dwg.frame(20,20,20,20, "red")
-dwg.frame(1, 10, 159, 49, "white")
- 
-dwg.square(30,30,10,5,"purple")
---]]
