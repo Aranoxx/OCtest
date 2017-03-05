@@ -76,6 +76,20 @@ function genBatAdd()
   mfsuBat1.mfsuAddID3 = component.get("61cb") -- mfsu 1.3
   mfsuBat1.mfsuAddID4 = component.get("0f2a") -- mfsu 1.4
   mfsuBat1.redsAddID1 = component.get("39b6") -- redstone IO
+
+  mfsuBat2.mfsuAddID1 = component.get("dedf") -- mfsu 1.1
+  mfsuBat2.mfsuAddID2 = component.get("cf23") -- mfsu 1.2
+  mfsuBat2.mfsuAddID3 = component.get("61cb") -- mfsu 1.3
+  mfsuBat2.mfsuAddID4 = component.get("0f2a") -- mfsu 1.4
+  mfsuBat2.redsAddID1 = component.get("39b6") -- redstone IO
+
+  mfsuBat3.mfsuAddID1 = component.get("dedf") -- mfsu 1.1
+  mfsuBat3.mfsuAddID2 = component.get("cf23") -- mfsu 1.2
+  mfsuBat3.mfsuAddID3 = component.get("61cb") -- mfsu 1.3
+  mfsuBat3.mfsuAddID4 = component.get("0f2a") -- mfsu 1.4
+  mfsuBat3.redsAddID1 = component.get("39b6") -- redstone IO
+
+
 end
  
  
