@@ -90,11 +90,13 @@ function getSignalInput(ID)
     m = mfsuBat3
   end
   e1 = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), -2)
---  e2 = component.proxy(component.get(mfsu12add)).getEnergy()
---  e3 = component.proxy(component.get(mfsu13add)).getEnergy()
---  e4 = component.proxy(component.get(mfsu14add)).getEnergy()
+  e2 = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), -2)
+  e3 = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), -2)
+  e4 = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), -2)
   dwg.text(m.xPos+52, m.yPos+2, "black", "white", e1)
- 
+  dwg.text(m.xPos+52, m.yPos+4, "black", "white", e2)
+  dwg.text(m.xPos+52, m.yPos+6, "black", "white", e3)
+  dwg.text(m.xPos+52, m.yPos+8, "black", "white", e4)
 end
  
 function debug(ID)  
