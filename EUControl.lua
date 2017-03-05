@@ -19,14 +19,14 @@ function mfsuBatTable(ID, x, y)
   n.mfsuID4 = ID * 100 + 4
   n.xPos =  x
   n.yPos =  y
-  n.mfsuStatPID1 = 0
-  n.mfsuStatPID2 = 0
-  n.mfsuStatPID3 = 0
-  n.mfsuStatPID4 = 0
-  n.mfsuStatCID1 = 0
-  n.mfsuStatCID2 = 0
-  n.mfsuStatCID3 = 0
-  n.mfsuStatCID4 = 0
+  n.mfsuEnergyID1 = 0
+  n.mfsuEnergyID2 = 0
+  n.mfsuEnergyID3 = 0
+  n.mfsuEnergyID4 = 0
+--  n.mfsuStatCID1 = 0
+--  n.mfsuStatCID2 = 0
+--  n.mfsuStatCID3 = 0
+--  n.mfsuStatCID4 = 0
   return n  
 end    
  
@@ -101,13 +101,9 @@ function getSignalInput(ID)
   dwg.text(m.xPos+52, m.yPos+4, "black", "white", e2)
   dwg.text(m.xPos+52, m.yPos+6, "black", "white", e3)
   dwg.text(m.xPos+52, m.yPos+8, "black", "white", e4)
-  m.mfsuStatPID1 = e1
-  m.mfsuStatPID2 = e2
-  m.mfsuStatPID3 = e3
-  m.mfsuStatPID4 = e4
 end
 
---[[
+
 function updateMfsu(ID)
   if ID == 1 then
     m = mfsuBat1
@@ -116,11 +112,16 @@ function updateMfsu(ID)
   elseif ID == 3 then
     m = mfsuBat3
   end
+  e1last = m.mfsuEnergyID1
+  e1pres = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), 2)
+  e2last = m.mfsuEnergyID2
+  e2pres = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), 2)
+  e3last = m.mfsuEnergyID3
+  e3pres = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), 2)
+  e4last = m.mfsuEnergyID4
+  e4pres = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), 2)
 
-  e1 = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), 2)
-  e2 = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), 2)
-  e3 = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), 2)
-  e4 = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), 2)
+ 
 
   e1diff = e1 - m.mfsuStatPID1
  if m.
