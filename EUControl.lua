@@ -83,10 +83,10 @@ function genBatAdd()
   mfsuBat2.mfsuAddID4 = component.get("2e89") -- mfsu 2.4
   mfsuBat2.redsAddID1 = component.get("456a") -- redstone IO
 
-  mfsuBat3.mfsuAddID1 = component.get("dedf") -- mfsu 1.1
-  mfsuBat3.mfsuAddID2 = component.get("cf23") -- mfsu 1.2
-  mfsuBat3.mfsuAddID3 = component.get("61cb") -- mfsu 1.3
-  mfsuBat3.mfsuAddID4 = component.get("0f2a") -- mfsu 1.4
+  mfsuBat3.mfsuAddID1 = component.get("ff0c") -- mfsu 1.1
+  mfsuBat3.mfsuAddID2 = component.get("a814") -- mfsu 1.2
+  mfsuBat3.mfsuAddID3 = component.get("c9af") -- mfsu 1.3
+  mfsuBat3.mfsuAddID4 = component.get("4a56") -- mfsu 1.4
   mfsuBat3.redsAddID1 = component.get("f3aa") -- redstone IO
 
 
@@ -103,10 +103,10 @@ function getSignalInput(ID)
   elseif ID == 3 then
     m = mfsuBat3
   end
-  e1 = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), -2)
-  e2 = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), -2)
-  e3 = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), -2)
-  e4 = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), -2)
+  e1 = tostring(number.round(component.proxy(m.mfsuAddID1).getEnergy()/1000000), 2)
+  e2 = tostring(number.round(component.proxy(m.mfsuAddID2).getEnergy()/1000000), 2)
+  e3 = tostring(number.round(component.proxy(m.mfsuAddID3).getEnergy()/1000000), 2)
+  e4 = tostring(number.round(component.proxy(m.mfsuAddID4).getEnergy()/1000000), 2)
   dwg.text(m.xPos+52, m.yPos+2, "black", "white", e1)
   dwg.text(m.xPos+52, m.yPos+4, "black", "white", e2)
   dwg.text(m.xPos+52, m.yPos+6, "black", "white", e3)
