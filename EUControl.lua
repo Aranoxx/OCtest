@@ -65,7 +65,7 @@ function dwgMfsuBat(ID)
     b = 1
     dwg.square(m.xPos+25, m.yPos+a, 20, 1, "white")
     dwg.text(m.xPos+21, m.yPos+a, "black", "white", m.batID .."."..b..":")
-    dwg.text(m.xPos+45, m.yPos+a, "black", "white", "Level:     MEU")
+    dwg.text(m.xPos+46, m.yPos+a, "black", "white", "Level:     MEU")
     b = b + 1
   end
 end
@@ -119,6 +119,8 @@ dwgMfsuBat(3)
  
 genBatAdd()
 getSignalInput(1)
+getSignalInput(2)
+getSignalInput(3)
  
 while true do
   os.sleep(1)
