@@ -71,11 +71,11 @@ function dwgMfsuBat(ID)
 end
  
 function genBatAdd()
-  mfsuBat1.mfsuAddID1 = component.get("dedf")
-  mfsuBat1.mfsuAddID2 = component.get("cf23")
-  mfsuBat1.mfsuAddID3 = component.get("0f2a")
-  mfsuBat1.mfsuAddID4 = component.get("61cb")
-  mfsuBat1.redsAddID1 = component.get("39bb")
+  mfsuBat1.mfsuAddID1 = component.get("dedf") -- mfsu 1.1
+  mfsuBat1.mfsuAddID2 = component.get("cf23") -- mfsu 1.2
+  mfsuBat1.mfsuAddID3 = component.get("61cb") -- mfsu 1.3
+  mfsuBat1.mfsuAddID4 = component.get("0f2a") -- mfsu 1.4
+  mfsuBat1.redsAddID1 = component.get("39b6") -- redstone IO
 end
  
  
@@ -97,6 +97,11 @@ function getSignalInput(ID)
  
 end
  
+function debug(ID)  
+  m = mfsuBat1
+  print("MFSU ID-"..(m.batID).." // ".. "Energy: ".. component.proxy(m.mfsuAddID2).getEnergy())
+end
+ 
  
 -- ================ Setup tables
 mfsuBat1 = mfsuBatTable(1, 62, 2)
@@ -115,6 +120,7 @@ getSignalInput(1)
  
 while true do
   os.sleep(1)
+--  debug(1)
 end
  
  
